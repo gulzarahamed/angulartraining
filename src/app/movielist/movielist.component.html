@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="pane panel-primary">
+    <div class="panel-body">
+      <div class="col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel panel-heading">Movie List</div>
+          <div class="panel panel-body" >
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Year</th>
+                  <th>Genre</th>
+                  <th>Rating</th>
+                  <th>Get Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let movie of movies">
+                  <td>{{movie.name}}</td>
+                  <td>{{movie.genre}}</td>
+                  <td>{{movie.year}}</td>
+                  <td>{{movie.rating}}/10, {{movie.rating | rating}}</td>
+                  <td><button appPopup type="button" class="btn btn-default" (click)=sendMessage(movie.rating)>Show Detail</button></td>
+                </tr>
+              </tbody>
+            </table>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
